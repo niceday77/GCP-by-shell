@@ -166,7 +166,7 @@ HOST=$(echo "$SERVICE_URL" | sed 's|https://||')
 
 UUID="33d55e97-26ab-4e59-9f37-7a944044baaa"
 WS_PATH="/"
-ENCODED_PATH="%/"
+ENCODED_PATH="/"
 
 VLESS="vless://${UUID}@${HOST}:443?encryption=none&security=tls&type=ws&path=${ENCODED_PATH}&host=${HOST}#${SERVICE_NAME}"
 
