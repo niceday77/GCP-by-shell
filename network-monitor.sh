@@ -2,7 +2,7 @@
 
 # ==============================================
 #        CONNECTION MONITOR & LOGGER
-#           created by prvtspyyy
+#           created by free
 # ==============================================
 
 SERVICE_NAME="${1:-prvtspyyy404}"
