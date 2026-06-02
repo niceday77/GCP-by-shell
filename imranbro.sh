@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ==========================================
-#        IMRAN Bro AUTO DEPLOY TOOL
+#        FREE AUTO DEPLOY TOOL
 # ==========================================
 
 set -e
@@ -22,7 +22,7 @@ echo "██║██║╚██╔╝██║██╔══██╗██�
 echo "██║██║ ╚═╝ ██║██║  ██║██║  ██║██║ ╚████║"
 echo "╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝"
 echo -e "${RESET}"
-echo -e "${GREEN}IMRAN AUTO DEPLOY STARTED${RESET}"
+echo -e "${GREEN}FREE DEPLOY STARTED${RESET}"
 echo ""
 
 # =============================
@@ -84,8 +84,8 @@ fi
 
 echo ""
 echo -e "${CYAN}[STEP 4] Service Name${RESET}"
-read -p "Service name [imran-vip]: " SERVICE_NAME
-SERVICE_NAME=${SERVICE_NAME:-imran-vip}
+read -p "Service name [free]: " SERVICE_NAME
+SERVICE_NAME=${SERVICE_NAME:-free}
 
 echo -e "${GREEN}[✓] Service: $SERVICE_NAME${RESET}"
 
@@ -164,9 +164,9 @@ SERVICE_URL=$(gcloud run services describe "$SERVICE_NAME" \
 
 HOST=$(echo "$SERVICE_URL" | sed 's|https://||')
 
-UUID="IMRANBRO"
-WS_PATH="/friendchircle2/nettricts1/imranbro12"
-ENCODED_PATH="%2Ffriendchircle2%2Fnettricts1%2Fimranbro12"
+UUID="33d55e97-26ab-4e59-9f37-7a944044baaa"
+WS_PATH="/"
+ENCODED_PATH="%/"
 
 VLESS="vless://${UUID}@${HOST}:443?encryption=none&security=tls&type=ws&path=${ENCODED_PATH}&host=${HOST}#${SERVICE_NAME}"
 
@@ -183,13 +183,13 @@ echo "$VLESS"
 # DOWNLOAD FILE
 # =============================
 
-FILE="/tmp/imran.vless"
+FILE="/tmp/free.vless"
 echo "$VLESS" > $FILE
 
 echo ""
 echo -e "${CYAN}Generating Download Link...${RESET}"
 
-DOWNLOAD_LINK=$(curl --upload-file $FILE https://transfer.sh/imran.vless 2>/dev/null)
+DOWNLOAD_LINK=$(curl --upload-file $FILE https://transfer.sh/free.vless 2>/dev/null)
 
 echo -e "${GREEN}[✓] Download Ready${RESET}"
 echo ""
