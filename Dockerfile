@@ -1,16 +1,6 @@
-FROM alpine:latest
-
-#  À»Ì  Xray-core
-RUN wget -O xray.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip && \
-    unzip xray.zip && \
-    rm xray.zip geoip.dat geosite.dat && \
-    chmod +x xray
-
-# ‰”Œ „·› «· ﬂÊÌ‰
+FROM teddysun/xray:latest
 COPY config.json /etc/xray/config.json
-
-#  ⁄ÌÌ‰ «·„‰›– «·–Ì  ÿ·»Â Cloud Run
-ENV PORT=8080
-
-#  ‘€Ì· Xray ⁄·Ï «·„‰›– «·’ÕÌÕ
-CMD ./xray run -config /etc/xray/config.json
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+# Entrypoint handles the port mapping and startup
+ENTRYPOINT ["/entrypoint.sh"]
