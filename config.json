@@ -6,7 +6,7 @@
       "protocol": "vless",
       "settings": {
         "clients": [
-          { "id": "IMRANBRO" }
+          { "id": "33d55e97-26ab-4e59-9f37-7a944044baaa" }
         ],
         "decryption": "none",
         "fallbacks": [
@@ -17,7 +17,7 @@
         "network": "ws",
         "security": "none",
         "wsSettings": {
-          "path": "/friendchircle2/nettricts1/imranbro12"
+          "path": "/"
         }
       },
       "sniffing": {
